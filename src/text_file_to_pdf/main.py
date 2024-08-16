@@ -15,6 +15,9 @@ logger = logging.getLogger()
 # Constants
 FORM_FEED = "\f"
 LINE_FEED = "\n"
+ONE_CM_IN_PT: float = (7200 / 254)
+DEFAULT_LEFT_MARGIN = (0.2 * ONE_CM_IN_PT)
+DEFAULT_TOP_MARGIN = (0.35 * ONE_CM_IN_PT)
 TIMER_TEXT = "{name}: Elapsed time: {:.4f} seconds"
 
 
@@ -48,7 +51,7 @@ TIMER_TEXT = "{name}: Elapsed time: {:.4f} seconds"
 @click.option(
     "--unit",
     type=click.Choice(["pt", "mm", "cm", "in"], case_sensitive=False),
-    default="in",
+    default="mm",
     show_default=True,
     required=True,
     help="The units to use for the PDF."
@@ -77,6 +80,22 @@ TIMER_TEXT = "{name}: Elapsed time: {:.4f} seconds"
     required=True,
     help="The font-size to use in the PDF file."
 )
+@click.option(
+    "--left-margin",
+    type=float,
+    default=DEFAULT_LEFT_MARGIN,
+    show_default=True,
+    required=True,
+    help="The left margin for the PDF - in cm."
+)
+@click.option(
+    "--top-margin",
+    type=float,
+    default=DEFAULT_TOP_MARGIN,
+    show_default=True,
+    required=True,
+    help="The top margin for the PDF - in cm."
+)
 def main(version: bool,
          input_file: str,
          output_file: str,
@@ -84,7 +103,9 @@ def main(version: bool,
          unit: str,
          format: str,
          font_name: str,
-         font_size: int):
+         font_size: int,
+         left_margin: float,
+         top_margin: float):
     if version:
         print(f"Text File to PDF - version: {app_version}")
         return
@@ -103,7 +124,8 @@ def main(version: bool,
                        unit=unit,
                        format=format
                        )
-            pdf.set_margins(left=0, top=0)
+            pdf.set_margins(left=left_margin, top=top_margin)
+            pdf.set_auto_page_break(auto=False)
             pdf.set_font(family=font_name, size=font_size)
 
             for page in page_list:
