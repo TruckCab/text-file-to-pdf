@@ -121,9 +121,12 @@ def main(version: bool,
 
             logger.info(msg=f"Text file: '{input_file}' was successfully converted to PDF file: '{output_file}'")
 
-        except:
+        except Exception as e:
             logger.error(
-                msg=f"An error occurred while converting the text file: '{input_file}' to a PDF file: '{output_file}'")
+                msg=(f"An error occurred while converting the text file: '{input_file}' to a PDF file: '{output_file}'"
+                     f"\nError text: {str(e)}"
+                     )
+            )
             raise
 
 
