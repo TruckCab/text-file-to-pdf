@@ -49,6 +49,28 @@ export PYTHONPATH=$(pwd)/src
 ### Help
 ```shell
 text-file-to-pdf --help
+Usage: text-file-to-pdf [OPTIONS]
+
+Options:
+  --version / --no-version        Prints the "Text File to PDF" program
+                                  version and exits.  [required]
+  --input-file TEXT               The input text file to convert to PDF
+                                  format.  The path can be relative or
+                                  absolute.  [required]
+  --output-file TEXT              The output PDF file to create.  The path can
+                                  be relative or absolute.  [required]
+  --orientation [portrait|landscape]
+                                  The page orientation to use for the PDF
+                                  file.  [required]
+  --format [a3|a4|a5|letter|legal]
+                                  The page (paper) format for the PDF file.
+                                  [default: letter; required]
+  --font-name [courier|helvetica|times]
+                                  The font to use in the PDF file.  [default:
+                                  courier; required]
+  --font-size INTEGER             The font-size to use in the PDF file.
+                                  [default: 9; required]
+  --help                          Show this message and exit.
 ```
 
 ## Handy development commands
