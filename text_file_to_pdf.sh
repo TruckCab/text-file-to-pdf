@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # Load the Default Profile
 . ~/.bash_profile
 
