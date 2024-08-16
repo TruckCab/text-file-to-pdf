@@ -103,7 +103,7 @@ def main(version: bool,
                        unit=unit,
                        format=format
                        )
-
+            pdf.set_margins(left=0, top=0)
             pdf.set_font(family=font_name, size=font_size)
 
             for page in page_list:
