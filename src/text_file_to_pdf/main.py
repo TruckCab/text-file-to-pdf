@@ -46,6 +46,14 @@ TIMER_TEXT = "{name}: Elapsed time: {:.4f} seconds"
     help="The page orientation to use for the PDF file."
 )
 @click.option(
+    "--unit",
+    type=click.Choice(["pt", "mm", "cm", "in"], case_sensitive=False),
+    default="in",
+    show_default=True,
+    required=True,
+    help="The units to use for the PDF."
+)
+@click.option(
     "--format",
     type=click.Choice(["a3", "a4", "a5", "letter", "legal"], case_sensitive=False),
     default="letter",
@@ -73,6 +81,7 @@ def main(version: bool,
          input_file: str,
          output_file: str,
          orientation: str,
+         unit: str,
          format: str,
          font_name: str,
          font_size: int):
@@ -91,6 +100,7 @@ def main(version: bool,
             page_list = text_file_contents.split(FORM_FEED)
 
             pdf = FPDF(orientation=orientation,
+                       unit=unit,
                        format=format
                        )
 
@@ -112,7 +122,8 @@ def main(version: bool,
             logger.info(msg=f"Text file: '{input_file}' was successfully converted to PDF file: '{output_file}'")
 
         except:
-            logger.error(msg=f"An error occurred while converting the text file: '{input_file}' to a PDF file: '{output_file}'")
+            logger.error(
+                msg=f"An error occurred while converting the text file: '{input_file}' to a PDF file: '{output_file}'")
             raise
 
 
