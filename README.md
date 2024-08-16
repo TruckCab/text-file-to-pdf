@@ -62,6 +62,8 @@ Options:
   --orientation [portrait|landscape]
                                   The page orientation to use for the PDF
                                   file.  [required]
+  --unit [pt|mm|cm|in]            The units to use for the PDF.  [default: mm;
+                                  required]
   --format [a3|a4|a5|letter|legal]
                                   The page (paper) format for the PDF file.
                                   [default: letter; required]
@@ -70,6 +72,10 @@ Options:
                                   courier; required]
   --font-size INTEGER             The font-size to use in the PDF file.
                                   [default: 9; required]
+  --left-margin FLOAT             The left margin for the PDF - in cm.
+                                  [default: 5.669291338582678; required]
+  --top-margin FLOAT              The top margin for the PDF - in cm.
+                                  [default: 9.921259842519683; required]
   --help                          Show this message and exit.
 ```
 
