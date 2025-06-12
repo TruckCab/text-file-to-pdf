@@ -38,7 +38,7 @@ requires-python = ">=3.10"
 dev = ["bumpver", "pip-tools", "pytest"]
 
 [project.urls]
-Homepage = "https://github.com/TruckCab/text-to-pdf"
+Homepage = "https://github.com/TruckCab/text-file-to-pdf"
 
 [project.scripts]
 text-file-to-pdf = "text_file_to_pdf.main:main"
