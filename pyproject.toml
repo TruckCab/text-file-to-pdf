@@ -14,7 +14,7 @@ include = ["*"]  # package names should match these glob patterns (["*"] by defa
 
 [project]
 name = "text-file-to-pdf"
-version = "0.0.7"
+version = "0.0.8"
 description = "A Python-based tool converting a text file to a PDF file"
 readme = "README.md"
 authors = [{ name = "Philip Moore", email = "prmoore77@hotmail.com" },
@@ -44,7 +44,7 @@ Homepage = "https://github.com/TruckCab/text-to-pdf"
 text-file-to-pdf = "text_file_to_pdf.main:main"
 
 [tool.bumpver]
-current_version = "0.0.7"
+current_version = "0.0.8"
 version_pattern = "MAJOR.MINOR.PATCH[PYTAGNUM]"
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true
