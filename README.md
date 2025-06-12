@@ -6,6 +6,8 @@
 [![PyPI version](https://badge.fury.io/py/text-file-to-pdf.svg)](https://badge.fury.io/py/text-file-to-pdf)
 [![PyPI Downloads](https://img.shields.io/pypi/dm/text-file-to-pdf.svg)](https://pypi.org/project/text-file-to-pdf/)
 
+The `text-file-to-pdf` is a command-line utility that allows you to convert text files into PDF format. It supports various configurations such as page orientation, units, font type, font size, and margins.
+
 ## Install package
 You can install `text-file-to-pdf` from source.
 
